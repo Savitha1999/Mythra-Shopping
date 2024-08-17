@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Bag() {
     const [cartItems, setCartItems] = useState([]);
 
+    
     useEffect(() => {
         try {
             const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
