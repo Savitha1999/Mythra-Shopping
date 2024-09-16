@@ -153,14 +153,14 @@ export default function Home()
         <Container fluid className="app bg-white">
             <Container fluid className="top bg-light p-2">
                 <Row>
-                    <Col xs={1} className="mt-2">
+                    <Col xs={1} className="bar mt-2">
                     <Link to={'/'} style={{color:"black", textDecoration:"none"}}>
                         <img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
                     </Link>
                     </Col>
 
 
-            <Col xs={5} className="mt-4 d-flex">
+            <Col xs={5} className="drop mt-4 d-flex">
             <div className="link1">
           <span
             className="link"
@@ -896,7 +896,7 @@ export default function Home()
 </Col>
 
 
-               <Col xs={4} className="">
+               <Col xs={4} className="see">
                {/* <FaSearch /> */}
                         <input type="text" placeholder="Search"
                         value={searchTerm}
@@ -970,23 +970,23 @@ export default function Home()
         <Container fluid className="bg-white mt-1">
           <h1 className="text-center p-4 mt-2 text-primary"> SHOP BY CATEGORY </h1>
           <Row>
-            <Col xs={2}>
-            <img src={deal1} style={{width:"85%"}} />
+            <Col className="mt-2" xs={12} md={6} lg={2}>
+            <img src={deal1} style={{width:"90%" , marginLeft:"5%"}} />
             </Col>
-            <Col xs={2}>
-            <img src={deal2} style={{width:"85%"}} />
+            <Col className="mt-2" xs={12} md={6} lg={2}>
+            <img src={deal2} style={{width:"85%" , marginLeft:"5%"}} />
             </Col>
-            <Col xs={2}>
-            <img src={deal3}  style={{width:"85%"}} />
+            <Col className="mt-2" xs={12} md={6} lg={2}>
+            <img  src={deal3}  style={{width:"85%" , marginLeft:"5%"}} />
             </Col>
-            <Col xs={2}>
-            <img src={deal4}  style={{width:"85%"}} />
+            <Col className="mt-2" xs={12} md={6} lg={2}>
+            <img src={deal4}  style={{width:"85%" , marginLeft:"5%"}} />
             </Col>
-            <Col xs={2}>
-            <img src={deal5}  style={{width:"85%"}} />
+            <Col className="mt-2" xs={12} md={6} lg={2}>
+            <img src={deal5}  style={{width:"85%" , marginLeft:"5%"}} />
             </Col>
-            <Col xs={2}>
-            <img src={deal6}  style={{width:"85%"}} />
+            <Col className="mt-2" xs={12} md={6} lg={2}>
+            <img src={deal6}  style={{width:"85%" , marginLeft:"5%"}} />
             </Col>
           </Row>
         </Container>
@@ -1001,7 +1001,7 @@ export default function Home()
                         { filteredMensImages.length > 0 ? (
                         filteredMensImages.map((item, index) => (
                             <Col xs={3} key={index}>
-                                <img src={item.image} title={item.title} alt={`Mens ${item.title}`} />
+                                <img  src={item.image} title={item.title} alt={`Mens ${item.title}`} />
                                 <p>{item.title}</p>
                             </Col>
                         ))
@@ -1037,7 +1037,7 @@ export default function Home()
             </Container> 
 
             {/* KIDS section */}
-            <Container fluid className="mt-3">
+            <Container fluid className=" mt-3">
                 <h2 className="bg-info p-3 text-white">KIDS</h2>
                 <Container className="bg-light">
                 <Link to={'/kids'} style={{textDecoration:"none" , color:"black"}} >

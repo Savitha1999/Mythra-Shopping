@@ -823,7 +823,7 @@ export default function Signup()
 </Col>
 
 
-         <Col xs={4} className="mt-2">
+         <Col xs={4} className="see mt-2">
                   <input type="text" placeholder="Search"
                   value={searchTerm}
                   style={{backgroundColor:"white"}}

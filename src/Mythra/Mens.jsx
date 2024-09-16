@@ -821,7 +821,7 @@ export default function Mens() {
                     
                  
                     </Col>
-                    <Col xs={4}>
+                    <Col xs={4} className="see">
                         <input
                             type="text"
                             placeholder="Search"
@@ -855,177 +855,173 @@ export default function Mens() {
                 </Row>
             </Container>
 
+
+            {/* MENS SECTION */}
+
             <Container fluid className="purchase bg-white mt-3">
-                <Row>
-                    <Col xs={3}>
-                        <img src={ts1} />
-                    </Col>
-                    <Col xs={3}>
-                        <img src={ts2} />
-                    </Col>
-                    <Col xs={6} className="p-2">
-                        <h2 className="text-primary"><b>Moda Rapido</b></h2>
-                        <p>Men Black & White Printed Round Neck T-shirt</p>
-                        <img src={rate1} style={{ width: "150px" }} />
-                        <hr />
-                        <p>MRP <span><FaRupeeSign />899</span></p>
-                        <h6 className="text-success">inclusive of all taxes</h6>
-                        <br />
-                        <p>MORE COLOR</p>
-                        <img src={more1} style={{ width: "100px" }} />
-                    </Col>
-                </Row>
+    <Row>
+        <Col xs={12} md={4} lg={3} className="mb-3">
+            <img src={ts1} className="img-fluid" alt="T-shirt 1" />
+        </Col>
+        <Col xs={12} md={4} lg={3} className="mb-3">
+            <img src={ts2} className="img-fluid" alt="T-shirt 2" />
+        </Col>
+        <Col xs={12} md={12} lg={6} className="p-2">
+            <h2 className="text-primary"><b>Moda Rapido</b></h2>
+            <p>Men Black & White Printed Round Neck T-shirt</p>
+            <img src={rate1} className="img-fluid" style={{ width: "150px" }} alt="Rating" />
+            <hr />
+            <p>MRP <span><FaRupeeSign />899</span></p>
+            <h6 className="text-success">inclusive of all taxes</h6>
+            <br />
+            <p>MORE COLOR</p>
+            <img src={more1} className="img-fluid" style={{ width: "100px" }} alt="More Colors" />
+        </Col>
+    </Row>
 
-                <Row className="mt-4">
-                    <Col xs={3}>
-                        <img src={ts3} />
-                    </Col>
-                    <Col xs={3}>
-                        <img src={ts4} />
-                    </Col>
-                    <Col xs={6}>
-                        <h5 style={{ color: "purple", fontStyle: "italic" }}>
-                            SELECT SIZE <IoIosArrowForward style={{ marginBottom: "5px" }} />
-                        </h5>
-                        {sizes.map((size, index) => (
-                            <Button
-                                className="text-dark"
-                                key={index}
-                                style={{ borderRadius: "55%", marginRight: "10px" }}
-                                onClick={() => handleSizeSelect(size)}
-                                variant={selectedSize === size ? "info" : "outline-info"}
-                            >
-                                {size}
-                            </Button>
-                        ))}
-                        <br /> <br />
-                        <Button
-                            style={{ width: "25%", padding: "13px", backgroundColor: "rgb(245, 43, 184)", border: "none" }}
-                            onClick={handleAddToBag}
-                        >
-                            <FontAwesomeIcon icon={faShoppingBag} style={{ marginRight: "8px" }} /> ADD TO BAG
-                        </Button>{' '}
-                        <Button style={{ width: "25%", padding: "13px", color: "black", border: "1px solid black" }} variant="light">
-                            <FaRegHeart style={{ marginRight: "8px", marginBottom: "4px" }} /> WISHLIST
-                        </Button>{' '}
-                        <br /> <br />
-                        <hr />
-                        <h3>Delivery Option <CiDeliveryTruck /></h3>
-                     
-                        <input type="pincode" placeholder="Enter Your PinCode" style={{ width: "35%", padding: "10px", border: "2px solid grey" }} />
-                        <h6 className="mt-1">Please enter PIN code to check delivery time & Pay on Delivery Availability</h6>
-                        <br />
-                        <p style={{ fontWeight: "normal" }}>100% Original Products</p>
-                        <p style={{ fontWeight: "normal" }}>Pay on delivery might be available</p>
-                        <p style={{ fontWeight: "normal" }}>Easy 14 days returns and exchanges</p>
-                        <br />
-                        <h4>BEST OFFERS <MdOutlineLocalOffer /></h4>
-                        <h5>Best Price: <span style={{ color: "orangered" }}>Rs.1329</span></h5>
-                        <ul>
-           <li> <GoDotFill /> Coupon code: <b> MYNTRA400 </b> </li>
-          <li> <GoDotFill /> Coupon Discount: Rs. 400 off (check cart for final savings) </li>
-           <li> <GoDotFill /> Applicable on: Orders above Rs. 1099 (only on first purchase) </li>
-         </ul>
-
-         <h4> PRODUCT DETAILES <BiDetail style={{ marginBottom:"5px"}} /> </h4>
-         <p style={{fontWeight:"normal"}}>  Black and white printed T-shirt, has a round neck, long sleeves  </p>
-         <h5> Size & Fit </h5>
-                  <p style={{fontWeight:"normal"}}> The model (height 6') is wearing a size M </p>
-         <h5> Material & Care </h5>
-        <p style={{fontWeight:"normal"}}> Cotton </p>
-        <p style={{fontWeight:"normal"}}> Machine-wash </p>
-        <br />
-         <h4> Specifications </h4>
-       
-       </Col>
-      </Row>
-
-       <Row>
-         <Col xs={6} >
-      </Col>  
-             <Col xs={3} className="p-4" >
-         <p style={{fontWeight:"normal"}}> Fabric </p>
-         <h6> Cotton </h6>
-        <hr></hr>
-
-         <p style={{fontWeight:"normal"}}> Length </p>
-         <h6> Regular </h6>
-         <hr></hr>
-
-         <p style={{fontWeight:"normal"}}> Multi Pack Set </p>
-         <h6> Single </h6>
-         <hr></hr>
-
-         <p style={{fontWeight:"normal"}}> Occasion </p>
-         <h6> Casual </h6>
-         <hr></hr>
-
-         <p style={{color:"red"}}> See More </p>
-         </Col>
-
-         <Col xs={3} className="p-4" >
-         <p style={{fontWeight:"normal"}}> Fit </p>
-         <h6> Regular Fit </h6>
-         <hr></hr>
-
-         <p style={{fontWeight:"normal"}}> Main Trend </p>
-         <h6> Abstract </h6>
-         <hr></hr>
-
-         <p style={{fontWeight:"normal"}}> Neck </p>
-         <h6> Round Neck </h6>
-         <hr></hr>
-
-         <p style={{fontWeight:"normal"}}> Pattern </p>
-         <h6> Printed </h6>
-         <hr></hr>
-         </Col>
-    
-       </Row>
-    
-       <Row>
-         <Col xs={6}>
-         </Col>
-         <Col xs={6}>
-         <h4> Rating <FaRegStar /> </h4>
-         <img src={star} style={{width:"50%"}} />
-         <hr></hr>
-         <p style={{color:"red"}}> View All 5495 Reviews </p>
-         <h5> 
-           Product Code: 2378356
-        </h5>
-         <p style={{fontWeight:"normal"}}>
-             Seller : <span style={{color:"rgb(245, 43, 184) ",fontWeight:"bold"}}> Truenet Commerce </span> 
-         </p>
-         <p> View Supplier Information </p>
-     
-                    </Col>
-                </Row>
-            </Container>
-
-            {showBagNotification && (
-                <div
-                    className="bag-notification"
-                    style={{
-                        position: "fixed",
-                        bottom: "20px",
-                        right: "20px",
-                        backgroundColor: "#28a745",
-                        color: "white",
-                        padding: "10px",
-                        borderRadius: "5px",
-                        boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
-                        zIndex: 1000
-                    }}
+    <Row className="mt-4">
+        <Col xs={12} md={4} lg={3} className="mb-3">
+            <img src={ts3} className="img-fluid" alt="T-shirt 3" />
+        </Col>
+        <Col xs={12} md={4} lg={3} className="mb-3">
+            <img src={ts4} className="img-fluid" alt="T-shirt 4" />
+        </Col>
+        <Col xs={12} md={12} lg={6}>
+            <h5 style={{ color: "purple", fontStyle: "italic" }}>
+                SELECT SIZE <IoIosArrowForward style={{ marginBottom: "5px" }} />
+            </h5>
+            {sizes.map((size, index) => (
+                <Button
+                    className="text-dark"
+                    key={index}
+                    style={{ borderRadius: "55%", marginRight: "10px" }}
+                    onClick={() => handleSizeSelect(size)}
+                    variant={selectedSize === size ? "info" : "outline-info"}
                 >
-                    Item added to bag!
-                </div>
-            )}
+                    {size}
+                </Button>
+            ))}
+            <br /> <br />
+            <Button
+                style={{ width: "100%", maxWidth: "200px", padding: "13px", backgroundColor: "rgb(245, 43, 184)", border: "none" }}
+                onClick={handleAddToBag}
+            >
+                <FontAwesomeIcon icon={faShoppingBag} style={{ marginRight: "8px" }} /> ADD TO BAG
+            </Button>{' '}
+            <Button style={{ width: "100%", maxWidth: "200px", padding: "13px", color: "black", border: "1px solid black" }} variant="light">
+                <FaRegHeart style={{ marginRight: "8px", marginBottom: "4px" }} /> WISHLIST
+            </Button>
+            <br /> <br />
+            <hr />
+            <h3>Delivery Option <CiDeliveryTruck /></h3>
+            <input type="text" placeholder="Enter Your PinCode" style={{ width: "100%", maxWidth: "300px", padding: "10px", border: "2px solid grey" }} />
+            <h6 className="mt-1">Please enter PIN code to check delivery time & Pay on Delivery Availability</h6>
+            <br />
+            <p style={{ fontWeight: "normal" }}>100% Original Products</p>
+            <p style={{ fontWeight: "normal" }}>Pay on delivery might be available</p>
+            <p style={{ fontWeight: "normal" }}>Easy 14 days returns and exchanges</p>
+            <br />
+            <h4>BEST OFFERS <MdOutlineLocalOffer /></h4>
+            <h5>Best Price: <span style={{ color: "orangered" }}>Rs.1329</span></h5>
+            <ul>
+                <li> <GoDotFill /> Coupon code: <b> MYNTRA400 </b> </li>
+                <li> <GoDotFill /> Coupon Discount: Rs. 400 off (check cart for final savings) </li>
+                <li> <GoDotFill /> Applicable on: Orders above Rs. 1099 (only on first purchase) </li>
+            </ul>
+
+            <h4>PRODUCT DETAILS <BiDetail style={{ marginBottom: "5px" }} /> </h4>
+            <p style={{ fontWeight: "normal" }}>Black and white printed T-shirt, has a round neck, long sleeves</p>
+            <h5>Size & Fit</h5>
+            <p style={{ fontWeight: "normal" }}>The model (height 6') is wearing a size M</p>
+            <h5>Material & Care</h5>
+            <p style={{ fontWeight: "normal" }}>Cotton</p>
+            <p style={{ fontWeight: "normal" }}>Machine-wash</p>
+            <br />
+            <h4>Specifications</h4>
+        </Col>
+    </Row>
+
+    <Row>
+        <Col xs={12} md={6} className="mb-3">
+        </Col>
+        <Col xs={12} md={6} className="p-4">
+            <p style={{ fontWeight: "normal" }}>Fabric</p>
+            <h6>Cotton</h6>
+            <hr />
+            <p style={{ fontWeight: "normal" }}>Length</p>
+            <h6>Regular</h6>
+            <hr />
+            <p style={{ fontWeight: "normal" }}>Multi Pack Set</p>
+            <h6>Single</h6>
+            <hr />
+            <p style={{ fontWeight: "normal" }}>Occasion</p>
+            <h6>Casual</h6>
+            <hr />
+          
+        </Col>
+        </Row>
+
+        <Row>
+        <Col xs={12} md={6} className="mb-3">
+        </Col>
+        <Col xs={12} md={6} className="p-4">
+            <p style={{ fontWeight: "normal" }}>Fit</p>
+            <h6>Regular Fit</h6>
+            <hr />
+            <p style={{ fontWeight: "normal" }}>Main Trend</p>
+            <h6>Abstract</h6>
+            <hr />
+            <p style={{ fontWeight: "normal" }}>Neck</p>
+            <h6>Round Neck</h6>
+            <hr />
+            <p style={{ fontWeight: "normal" }}>Pattern</p>
+            <h6>Printed</h6>
+            <hr />
+            <p style={{ color: "red" }}>See More</p>
+        </Col>
+    </Row>
+
+    <Row>
+        <Col xs={12} md={6} className="mb-3">
+        </Col>
+        <Col xs={12} md={6}>
+            <h4>Rating <FaRegStar /> </h4>
+            <img src={star} className="img-fluid" style={{ width: "50%" }} alt="Rating" />
+            <hr />
+            <p style={{ color: "red" }}>View All 5495 Reviews</p>
+            <h5>Product Code: 2378356</h5>
+            <p style={{ fontWeight: "normal" }}>
+                Seller: <span style={{ color: "rgb(245, 43, 184)", fontWeight: "bold" }}>Truenet Commerce</span>
+            </p>
+            <p>View Supplier Information</p>
+        </Col>
+    </Row>
+</Container>
+
+{showBagNotification && (
+    <div
+        className="bag-notification"
+        style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            backgroundColor: "#28a745",
+            color: "white",
+            padding: "10px",
+            borderRadius: "5px",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
+            zIndex: 1000
+        }}
+    >
+        Item added to bag!
+    </div>
+)}
+
         {/* </Container> */}
 
 
 
-
+{/* Footer Section */}
 
 <Container fluid className="footer p-3 text-center bg-light mt-5">
              
