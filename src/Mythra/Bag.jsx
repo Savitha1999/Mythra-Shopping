@@ -99,7 +99,7 @@ export default function Bag() {
             </Row>
             <Row className="mt-3">
                 <Col xs={12} className="text-center">
-                    <Link to="/" style={{ textDecoration: "none" }}>
+                    <Link to="/myntra" style={{ textDecoration: "none" }}>
                         <Button variant="primary">Continue Shopping</Button>
                     </Link>
                 </Col>

@@ -22,7 +22,7 @@ export default function Main()
 
         <Routes>
 
-            <Route path="/" element={<Home /> } />
+            <Route path="/myntra" element={<Home /> } />
             <Route path="/kids" element={<Kids />} />
             <Route path="/womens" element={<Womens />} />
             <Route path="/mens" element={<Mens />} />

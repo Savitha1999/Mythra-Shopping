@@ -154,7 +154,7 @@ export default function Home()
             <Container fluid className="top bg-light p-2">
                 <Row>
                     <Col xs={1} className="bar mt-2">
-                    <Link to={'/'} style={{color:"black", textDecoration:"none"}}>
+                    <Link to={'/myntra'} style={{color:"black", textDecoration:"none"}}>
                         <img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
                     </Link>
                     </Col>
@@ -939,22 +939,31 @@ export default function Home()
             
                 <Carousel controls={false} indicators={true} className="custom-carousel ">
                     <Carousel.Item interval={1500}>
+                      <Link to={'/mens'}>
                         <img className="d-block w-100 h-75 " src={slide1} alt="First slide" />
+                        </Link>
                     </Carousel.Item>
                     <Carousel.Item interval={1500} >
+                    <Link to={'/womens'}>
                         <img className="d-block w-100 h-75" src={slide2} alt="Second slide" />
+                        </Link>
                     </Carousel.Item>
                     <Carousel.Item interval={1500}>
+                    <Link to={'/kids'}>
                         <img className="d-block w-100 h-75" src={slide3} alt="Third slide" />
+                        </Link>
                     </Carousel.Item>
                     <Carousel.Item interval={1500}>
+                    <Link to={'/beauty'}>
                         <img className="d-block w-100 h-75" src={slide4} alt="Fourth slide" />
+                        </Link>
                     </Carousel.Item>
                 </Carousel>
             
  
 
         <Container fluid className="mt-5">
+        <Link to={'/mens'}>
             <Carousel controls={false} indicators={true} className="carousel">
                     <Carousel.Item interval={5000}>
                         <img className="d-block w-100 h-75" src={style1} />
@@ -963,6 +972,7 @@ export default function Home()
                         <img className="d-block w-100 h-75" src={style2}  />
                     </Carousel.Item>
             </Carousel>
+            </Link>
         </Container>
         </Container>
 
@@ -971,22 +981,34 @@ export default function Home()
           <h1 className="text-center p-4 mt-2 text-primary"> SHOP BY CATEGORY </h1>
           <Row>
             <Col className="mt-2" xs={12} md={6} lg={2}>
+            <Link to={'/beauty'}>
             <img src={deal1} style={{width:"90%" , marginLeft:"5%"}} />
+            </Link>
             </Col>
             <Col className="mt-2" xs={12} md={6} lg={2}>
+            <Link to={'/womens'}>
             <img src={deal2} style={{width:"85%" , marginLeft:"5%"}} />
+            </Link>
             </Col>
             <Col className="mt-2" xs={12} md={6} lg={2}>
+            <Link to={'/kids'}>
             <img  src={deal3}  style={{width:"85%" , marginLeft:"5%"}} />
+            </Link>
             </Col>
             <Col className="mt-2" xs={12} md={6} lg={2}>
+            <Link to={'/mens'}>
             <img src={deal4}  style={{width:"85%" , marginLeft:"5%"}} />
+            </Link>
             </Col>
             <Col className="mt-2" xs={12} md={6} lg={2}>
+            <Link to={'/mens'}>
             <img src={deal5}  style={{width:"85%" , marginLeft:"5%"}} />
+            </Link>
             </Col>
             <Col className="mt-2" xs={12} md={6} lg={2}>
+            <Link to={'/beauty'}>
             <img src={deal6}  style={{width:"85%" , marginLeft:"5%"}} />
+            </Link>
             </Col>
           </Row>
         </Container>
@@ -994,14 +1016,14 @@ export default function Home()
 
  {/* MENS section */}
           <Container fluid className="mt-5 ">
-                <h2 className="bg-info p-3 text-white">MENS</h2>
+                <h2 className="p-3 text-dark">MENS</h2>
                 <Container className="bg-light">
                   <Link to={'/mens'} style={{textDecoration:"none" , color:"black"}} >
-                    <Row className="men">
-                        { filteredMensImages.length > 0 ? (
+                  <Row className="men" xs={1} sm={2} md={3} lg={4}>
+                  { filteredMensImages.length > 0 ? (
                         filteredMensImages.map((item, index) => (
-                            <Col xs={3} key={index}>
-                                <img  src={item.image} title={item.title} alt={`Mens ${item.title}`} />
+                            <Col  key={index}>
+                                <img className="img-fluid" src={item.image} title={item.title} alt={`Mens ${item.title}`} />
                                 <p>{item.title}</p>
                             </Col>
                         ))
@@ -1016,13 +1038,13 @@ export default function Home()
 
             {/* WOMENS section */}
             <Container fluid className="mt-3">
-                <h2 className="bg-info p-3 text-white">WOMENS</h2>
+                <h2 className="p-3 text-dark">WOMENS</h2>
                 <Container className="bg-light">
                   <Link to={'/womens'} style={{textDecoration:"none" , color:"black"}} >
-                    <Row className="women">
+                    <Row className="women"  xs={1} sm={2} md={3} lg={4}>
                         { filteredWomensImages.length > 0 ? ( 
                         filteredWomensImages.map((item, index) => (
-                            <Col xs={3} key={index}>
+                            <Col  key={index}>
                                 <img src={item.image} title={item.title} alt={`Womens ${item.title}`} />
                                 <p>{item.title}</p>
                             </Col>
@@ -1038,13 +1060,13 @@ export default function Home()
 
             {/* KIDS section */}
             <Container fluid className=" mt-3">
-                <h2 className="bg-info p-3 text-white">KIDS</h2>
+                <h2 className=" p-3 text-dark">KIDS</h2>
                 <Container className="bg-light">
                 <Link to={'/kids'} style={{textDecoration:"none" , color:"black"}} >
-                    <Row className="kids">                   
+                    <Row className="kids"  xs={1} sm={2} md={3} lg={4}>                   
                         {  filteredKidsImages.length > 0 ? (
                         filteredKidsImages.map((item, index) => (
-                            <Col xs={3}    key={index}>
+                            <Col   key={index}>
                                 <img src={item.image} title={item.title} alt={`Kids ${item.title}`} />
                                 <p>{item.title}</p>
                             </Col>
@@ -1059,13 +1081,13 @@ export default function Home()
 
               {/* BEAUTY section */}
               <Container fluid className="mt-3" >
-                <h2 className="bg-info p-3 text-white">BEAUTY</h2>
+                <h2 className="p-3 text-dark">BEAUTY</h2>
                 <Container className="bg-light">
                   <Link to={'/beauty'} style={{textDecoration:"none" , color:"black"}} >
-                    <Row className="beauty">
+                    <Row className="beauty"  xs={1} sm={2} md={3} lg={4}>
                         {  filteredBeautyImages.length > 0 ? (
                         filteredBeautyImages.map((item, index) => (
-                            <Col xs={3} key={index}>
+                            <Col  key={index}>
                                 <img src={item.image} title={item.title} alt={`Beauty ${item.title}`} />
                                 <p>{item.title}</p>
                             </Col>
@@ -1079,40 +1101,54 @@ export default function Home()
             </Container>
 
             <Container fluid className="trends">
+            <Link to={'/beauty'} style={{textDecoration:"none"}}>
                 <Row>
                     <h3 className="head bg-light text-danger mt-4 p-3" > TRENDING IN ACCESSORIES </h3>
                     <img src={trending} alt="trending ACCESSORIES" />
                 </Row>
+            </Link>    
 
+            <Link to={'/womens'} style={{textDecoration:"none"}}>
                 <Row>
                     <h3 className="head bg-light text-danger mt-4 p-3" > EXPLORE TOP BRANDS </h3>
                     <img src={brands} alt="brands" />               
                 </Row>
+            </Link>
 
+            <Link to={'/womens'} style={{textDecoration:"none"}}>
                 <Row>
                     <h3 className="head bg-light text-danger mt-4 p-3" > CATEGORIES TO BAG </h3>
                     <img src={category}  alt="categories" />
                 </Row>
+                </Link>
 
+                <Link to={'/womens'} style={{textDecoration:"none"}}>
                 <Row>
                     <h3 className="head bg-light text-danger mt-4 p-3" > TRENDING IN WESTERN WEAR </h3>
                     <img src={western} alt="western wear" />
                 </Row>
+                </Link>
 
+                <Link to={'/womens'} style={{textDecoration:"none"}}>
                 <Row>
                     <h3 className="head bg-light text-danger mt-4 p-3" >TRENDING IN INDIAN WEAR</h3>
                     <img src={indian} alt="indian trending" />
                 </Row>
+                </Link>
 
+                <Link to={'/womens'} style={{textDecoration:"none"}}>
                 <Row>
                     <h3 className="head bg-light text-danger mt-4 p-3" > TRENDING IN SPORTS WEAR </h3>
                     <img src={sports}  alt="sports wears" />
                 </Row>
+                </Link>
 
+                <Link to={'/beauty'} style={{textDecoration:"none"}}>
                 <Row>
                     <h3 className="head bg-light text-danger mt-4 p-3" > TRENDING IN FOOTWEAR </h3>
                     <img src={footwear}  alt="footwears" />
                 </Row>
+                </Link>
 
            </Container>
 

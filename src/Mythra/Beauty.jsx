@@ -79,7 +79,7 @@ export default function Beauty() {
             <Container fluid className="top bg-light p-2">
                 <Row>
                     <Col xs={1} className="mt-2">
-                        <Link to={'/'} style={{ color: "black", textDecoration: "none" }}>
+                        <Link to={'/myntra'} style={{ color: "black", textDecoration: "none" }}>
                             <img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
                         </Link>
                     </Col>
