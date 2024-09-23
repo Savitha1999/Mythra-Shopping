@@ -30,49 +30,29 @@ import search from '../images/search.png';
 export default function Signup() 
 {
 
-    const [searchTerm, setSearchTerm] = useState("");
-
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmpassword, setConfirmPassword] = useState("");
-    const [phone, setPhone] = useState("");
-    const [gender, setGender] = useState("");
-    const [select, setSelect] = useState("");
-    const [checkbox, setCheckbox] = useState([]);
-    const [address, setAddress]=useState("");
-
-   
+  const [searchTerm, setSearchTerm] = useState(""); // State to store search term
 
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [phone, setPhone] = useState('');
 
-    const handleCheckbox = (value) => {
-        // Check if the checkbox is already in the array
-        if (checkbox.includes(value)) {
-            // If yes, remove it
-            setCheckbox(checkbox.filter(item => item !== value));
-        } else {
-            // If no, add it
-            setCheckbox([...checkbox, value]);
-        }
-    };
 
-    
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        if (!name || !email || !password || !confirmpassword || !phone || !gender || !select || checkbox.length === 0) {
-          
-            return;
-        }
-
-    
-         // Success Message display The Register Button
-        alert("Login Successful")
-
-        
+ 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!username || !password ||!phone) {
+      alert('Please fill in both fields');
+      return;
     }
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Phone:', phone);
+
+    setUsername('');
+    setPassword('');
+    setPhone('');
+  };
 
     return (
         <>
@@ -81,7 +61,7 @@ export default function Signup()
       <Container fluid className="top bg-light p-2">
           <Row>
               <Col xs={1} className="mt-2">
-              <Link to={'/myntra'} style={{color:"black", textDecoration:"none"}}>
+              <Link to={'/myntra'} style={{color:"black", textDecoration:"none",cursor:"pointer"}}>
                         <img src={logo} alt="Logo" style={{ width: "60px", height: "60px" }} />
                     </Link>
               </Col>
@@ -847,247 +827,54 @@ export default function Signup()
           <p style={{ fontSize: "15px" }}>Bag</p>
         </Link>  
       </div>
+
   </Col>
   </Row>         
 
 
 
     </Container>
-        <div className="frm  container w-50 mt-4" style={{border:"2px solid black"}}>
-            <div className="bg-primary text-white text-center mt-2 p-4 ">
-            <h1> SIGN IN </h1>
-            </div>
-         
-         <div className="forms bg-white p-5 ">
-            <form onSubmit={handleSubmit}>
-                <label> NAME : </label>
-                <input
-                    type="text"
-                    placeholder="Enter Your Name"
-                    value={name}
-                    onChange={(e) => {
-                        setName(e.target.value);                        
-                    }}  />
-                <br />
-                <br />
+    <div className='login bg-dark' style={{marginTop:"60px"}}>
+    <h1 className='text-white text-center  p-3 '> SIGNIN FORM  </h1>
+    <form  onSubmit={handleSubmit}>
+      <div>
+        <label>Username:</label>
+        <input 
+          type="email" 
+          placeholder='User Name'          
+          value={username} 
+          onChange={(e) => setUsername(e.target.value)} 
+        />
+      </div>
+      <div>
+        <label>Password:</label>
+        <input 
+          type="password" 
+          placeholder='User Password'          
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+        />
+      </div>
+
+      <div>
+        <label>Phone_No :</label>
+        <input 
+          type="phone" 
+          placeholder='User Phone Number'          
+          value={phone} 
+          onChange={(e) => setPhone(e.target.value)} 
+        />
+      </div>
+     
+      <button type="submit" className='mt-2 w-50 text-center bg-info' style={{marginLeft:"13px",borderRadius:"25px"}}>Login   </button>  
+      <div className=' text-end'>
+    <a href="#" className='forgot-password text-primary'>Forget Password?</a>
+  </div>
+    </form>
+    </div>
 
 
-                <label> EMAIL : </label>
-                <input
-                    type="email"
-                    placeholder="Enter Email Id"
-                    value={email}
-                    onChange={(e) => {
-                        setEmail(e.target.value);
-                    }} />
-                <br />
-                <br />
-
-
-                <label> PASSWORD : </label>
-                <input
-                    type="password"
-                    placeholder="Enter Your Password"
-                    value={password}
-                    onChange={(e) => {
-                        setPassword(e.target.value);
-                    }} 
-                    />
-                <br />
-                <br />
-
-
-                <label> CONFIRM <br>
-                </br> PASSWORD : </label>
-                <input
-                    type="password"
-                    placeholder="Confirm Your Password"
-                    value={confirmpassword}
-                    onChange={(e) => {
-                        setConfirmPassword(e.target.value);                      
-                    }} 
-                    />
-                <br />
-                <br />
-
-
-                <label> PHONE : </label>
-                <input
-                    type="tel"
-                    placeholder="Enter Your Phone Number"
-                    value={phone}
-                    onChange={(e) => {
-                        setPhone(e.target.value);
-                    }} />
-                <br />
-                <br />
-
-
-                <label> GENDER : </label>
-                <input type="radio" name="gender"  value="MALE" onChange={(e) => setGender(e.target.value)} /> Male
-                <input type="radio" name="gender"  className="gender" value="FEMALE" onChange={(e) => setGender(e.target.value)} /> Female
-                <input type="radio" name="gender"  className="gender" value="OTHERS" onChange={(e) => setGender(e.target.value)} /> Others
-                <br />
-                <br />
-
-                <label> COUNTRY : </label>
-                <select onChange={(e) => setSelect(e.target.value)} value={select} >
-                    <option value="" style={{color:"black" , backgroundColor:"white"}}>Select Your Country</option>
-                    <option value="India">India</option>
-                    <option value="Australia">Australia</option>
-                    <option value="America">America</option>
-                    <option value="Bangladesh">Bangladesh</option>
-                    <option value="Belgium">Belgium</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="Canada">Canada</option>
-                    <option value="China">China</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="France">France</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Hawaii">Hawaii</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Malaysia">Malaysia</option>
-                    <option value="Maldives">Maldives</option>
-                </select> 
-                <br />
-                <br />
-
-
-                <label> LANGUAGE : </label>
-                <input type="checkbox"  className="check" value="Tamil" onChange={(e) => handleCheckbox(e.target.value)} /> Tamil
-                <input type="checkbox"  className="check" value="English" onChange={(e) => handleCheckbox(e.target.value)} /> English
-                <input type="checkbox"  className="check" value="Hindi" onChange={(e) => handleCheckbox(e.target.value)} /> Hindi
-                <input type="checkbox"  className="check" value="French" onChange={(e) => handleCheckbox(e.target.value)} /> French
-                <input type="checkbox"  className="check" value="Spanish" onChange={(e) => handleCheckbox(e.target.value)} /> Spanish
-                <br />
-                <br />
-
-
-                <label> ADDRESS :  </label>
-                <input type="address"  style={{height:"75px",width:"75%",borderRadius:"20px" }}
-                placeholder="Enter Your Address"
-                value={address}
-                onChange={(e)=>setAddress(e.target.value)}/>
-                <br />
-                <br />
-
-                <input type="submit" value="SIGNIN" />
-            </form>
-            </div>
-            </div>
-
-            
-{/* FOOTER SECTION */}
-<Container fluid className="footer p-3 text-center bg-light mt-5">
-             
-             <Container>
-               <Row>
-                   <Col xs={3}>
-                   <h5> ONLINE SHOPPING </h5>
-             
-                   <ul>
-                       <li> MENS </li>
-                       <li> WOMENS </li>
-                       <li> KIDS </li>
-                       <li> BEAUTY </li>
-                       <li> HOME & LIVING </li>
-                       <li> STUDIO </li>
-                   </ul>
-             
-                   </Col>
-             
-                   <Col xs={3}>
-                   <h5> CUSTOMER POLICIES </h5>
-                   
-                   <ul>
-                   <li> Contact Us</li>
-                   <li> FAQ </li>
-                   <li> T&C </li>
-                   <li> Terms Of Uses </li>
-                   <li> Track Orders </li>
-                   <li> Shipping </li>
-                   <li> Canclellation </li>
-                   <li> Returns </li>
-                   <li> Privacy Policy </li>
-                   <li> Grienance Officer </li>
-                   </ul>
-             
-                   </Col>
-             
-                   <Col xs={3}>
-                   <h5> EXPERIENCE MYNTRA APP ON MOBILE </h5>
-                   <img src={app} />
-                   </Col>
-             
-                   <Col xs={3}>
-                   <img src={original} alt="guarantee all products" />
-                   </Col>
-               </Row>
-              <Row>
-               <h4 className="text-primary "> POPULAR SEARCHES </h4>
-               <hr></hr>
-               <p>
-                   Kurta Pajama | Leather Jackets | Sherwani | Shirts | T-Shirts |
-               Waistcoat | Photo Frames | Denim Shirts | Blazers | Mirror | Bags |
-               Jackets | Blouse Designs | Crop Tops | Mysore Silk Saree | Kids Lehenga
-               | Suit Design | Lehenga | Girl Dungarees | Top for Girl | Top for Girl |
-               Lingerie | Gowns | Saree | Kids Ethnic Wear | Sweaters | Boys Games |
-               Barbie Doll | Shoes For Men | Cricket Shoes | Lipstick | Make Up Kit |
-               Fastrack Watches | Casual Shoes | Online Shopping | Dresses | Babydolls
-               | Eye Makeup | Car Games | Nike Shoes | Puma | United Colors of Benetton
-               | Fastrack | Watches | Backpacks | Men Kurtas | Titan Watches               
-               </p>
-               <hr ></hr>
-              </Row>
-              </Container>
-              
-               <Row className="mt-2">
-                   <Col xs={3} className="mt-2">
-                   <p> In case of any concern, <span className="text-primary"> Contact Us </span>  </p>
-                   </Col>
-             
-                   <Col xs={3} >
-                   <i className="fa-brands fa-twitter p-2 "></i>           
-                   <i className="fa-brands fa-facebook p-2"></i>
-                   <i className="fa-brands fa-youtube p-2"></i>
-                   <i className="fa-brands fa-instagram p-2"></i>
-                   </Col> 
-             
-                   <Col xs={3} className="mt-2">
-                   <p> © 2024 www.myntra.com. All rights reserved. </p>
-                   </Col>
-             
-                   <Col xs={3} className="mt-2">
-                   <p> A Flipkart company </p>
-                   </Col>
-                   <hr></hr>
-               </Row>
-             
-               <Row>
-                   <Col xs={6}>
-                   <h5> Registered Office Address </h5>
-                   <br/> 
-                   <address style={{textAlign:"left"}}>
-                       Buildings Alyssa, <br />
-                       Begonia and Clover situated in Embassy Tech Village, <br />
-                       Outer Ring Road, <br />
-                       Devarabeesanahalli Village, <br />
-                       Varthur Hobli, <br />
-                       Bengaluru – 560103, India
-                   </address>
-                   </Col>
-             
-                   <Col xs={6} className="mt-5">
-                   <p> CIN: U72300KA2007PTC041799 </p>
-                   <p> TelePhone : <span> +91-80-61561999 </span> </p>
-                   </Col>
-                   <hr></hr>
-               </Row>
-             
-             
-             </Container>
+ 
             </Container>
         </>
     );
